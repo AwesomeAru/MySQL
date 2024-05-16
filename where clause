@@ -1,0 +1,34 @@
+SELECT * 
+FROM parks_and_recreation.employee_demographics
+WHERE gender = 'Female';
+#this is a comment 
+
+SELECT *
+FROM parks_and_recreation.employee_demographics
+WHERE (age >= 30 AND gender = 'female') OR (age <= 40 AND gender = 'male') #putting a condition for the specific row required
+;
+
+SELECT *
+FROM parks_and_recreation.employee_demographics
+WHERE first_name LIKE 'a%' #people who have a in the begining of their name
+;
+
+SELECT *
+FROM parks_and_recreation.employee_demographics
+WHERE first_name LIKE '%a%' #people who have a anywhere in their name
+;
+
+SELECT *
+FROM parks_and_recreation.employee_demographics
+WHERE first_name LIKE 'a__' #people who have a and 2 letters after it only
+;
+
+SELECT *
+FROM parks_and_recreation.employee_demographics
+WHERE first_name LIKE 'a__%' #people who have a and 2 letters after it and anything after those 2 letters. i.e. atleast 2 letters and can be more or less
+;
+
+SELECT *
+FROM parks_and_recreation.employee_demographics
+WHERE birth_date LIKE '%03%' #people who have march as birthday 
+;
