@@ -1,0 +1,23 @@
+SELECT *
+FROM parks_and_recreation.employee_demographics
+order by age desc
+limit 5
+;
+
+SELECT *
+FROM parks_and_recreation.employee_demographics
+order by age desc
+limit 2,2 #selects the 2 rows after the 2nd row
+;
+
+select gender as gen, avg(age) as avg_age
+from parks_and_recreation.employee_demographics
+group by gen
+having avg_age >40
+;
+
+select gender gen, avg(age) avg_age #this also works like the one above, even when we remove 'as'. it is understood by the software and interpretted like that
+from parks_and_recreation.employee_demographics
+group by gen
+having avg_age >40
+;
