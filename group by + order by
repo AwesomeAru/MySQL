@@ -1,0 +1,31 @@
+SELECT gender, AVG(age), MAX(age), MIN(age), COUNT(age) #count tells how many values are there  
+FROM parks_and_recreation.employee_demographics
+GROUP BY gender
+;
+#this is a comment 
+
+SELECT occupation, salary
+FROM parks_and_recreation.employee_salary
+GROUP BY occupation, salary
+;
+#this is a comment 
+
+SELECT *
+FROM parks_and_recreation.employee_demographics
+ORDER BY first_name #in ascending order or A to Z, default
+;
+
+SELECT *
+FROM parks_and_recreation.employee_demographics
+ORDER BY gender, age #in ascending order or A to Z, default
+;
+
+SELECT *
+FROM parks_and_recreation.employee_demographics
+ORDER BY gender, age DESC #doing age, gender ends us being useless as all the age values are unique
+;
+
+SELECT *
+FROM parks_and_recreation.employee_demographics
+ORDER BY first_name DESC #in descending order or Z to A
+;
