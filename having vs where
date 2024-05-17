@@ -1,0 +1,27 @@
+SELECT gender, AVG(age), MAX(age), MIN(age), COUNT(age) #count tells how many values are there  
+FROM parks_and_recreation.employee_demographics
+GROUP BY gender
+HAVING AVG(age) > 40
+;
+#this is a comment 
+
+
+SELECT occupation, AVG(salary)
+FROM parks_and_recreation.employee_salary
+WHERE occupation LIKE '%manager%' 
+GROUP BY occupation, salary #putting or not putting salary here makes a difference. if we not put salary here, we get values groupped by occupation - office manager and city manager. but if we put salary, a third group is also created office manager 50000 and office manager 60000
+#WHERE salary > 50000  #cannot be used after group by. only having can be used 
+HAVING AVG(salary) > 55000
+;
+
+SELECT occupation, salary
+FROM parks_and_recreation.employee_salary
+WHERE occupation LIKE '%manager%' 
+GROUP BY occupation, salary
+#WHERE salary > 50000  #cannot be used after group by. only having can be used with usual column names or aggregate functions
+HAVING salary > 55000
+;
+
+SELECT first_name, salary
+FROM parks_and_recreation.employee_salary
+;
