@@ -1,0 +1,13 @@
+select first_name, last_name, 'old man' as label #selecting whatever we want as column
+from employee_demographics
+where age > 40 and gender = 'male'
+union distinct #by default unioin is distinct so we need not write distinct 
+select first_name, last_name, 'old lady' as label
+from employee_demographics
+where age > 40 and gender = 'female'
+union distinct 
+select first_name, last_name, 'highly paid' as label
+from employee_salary
+where salary > 60000
+order by first_name, last_name
+;
