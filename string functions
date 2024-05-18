@@ -1,0 +1,44 @@
+select length('arunima tripathi');
+
+select first_name, length(first_name) as characters
+from employee_demographics
+order by characters
+;
+
+select first_name, upper(first_name) as stda
+from employee_demographics
+order by stda
+;
+
+select lower('ArUnImA');
+
+select trim('       arunima                             ');
+select ltrim('       arunima                                   ');
+select rtrim('       arunima                                   ');
+
+select first_name,
+left(first_name, 4) as first4, #the 4 here tells us how many characters do we want to show in first name from the left
+right(first_name, 4) as last4, #this shows 4 characters from first name from the right 
+#birth_date, 
+substring(birth_date, 6,2) as birth_month, #selects the 6th and 7th character from birth_date column values 
+substring(birth_date, 1,4) as birth_year #starting from 1 select 4 characters for the birth year 
+from employee_demographics
+order by birth_year
+;
+
+select replace('arunima', 'a', 'u');
+
+select first_name, replace(first_name, 'a', 'u')
+from employee_demographics
+;
+
+select locate('x', 'alex');
+
+select first_name, locate('an', first_name)
+from employee_demographics
+;
+
+select first_name, last_name,
+concat(first_name, ' ', last_name) as full_name
+from employee_demographics
+;
