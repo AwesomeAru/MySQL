@@ -1,0 +1,40 @@
+SELECT *
+FROM employee_demographics 
+inner join employee_salary 
+	on employee_demographics.employee_id = employee_salary.employee_id 
+;
+
+SELECT demo.employee_id, demo.age, occupation #if there are columns which are similar in both the tables then we have to specify the table we are reffering to 
+FROM employee_demographics demo
+inner join employee_salary sal
+	on demo.employee_id = sal.employee_id #we can also use aliasing here to shorten the name
+;
+
+SELECT *
+FROM employee_demographics demo #left table
+left join employee_salary sal #right table 
+	on demo.employee_id = sal.employee_id #we can also use aliasing here to shorten the name
+;
+
+SELECT *
+FROM employee_demographics demo #left table
+right join employee_salary sal #right table 
+	on demo.employee_id = sal.employee_id #we can also use aliasing here to shorten the name
+;
+
+SELECT demo1.employee_id,
+demo1.first_name,
+demo2.employee_id,
+demo2.first_name
+FROM employee_demographics demo1 #left table
+join employee_demographics demo2 #right table 
+	on demo1.employee_id +3 = demo2.employee_id #we can also use aliasing here to shorten the name
+;
+
+SELECT *
+FROM employee_demographics demo #left table
+inner join employee_salary sal #right table 
+	on demo.employee_id = sal.employee_id #we can also use aliasing here to shorten the name
+inner join parks_departments pd
+	on sal.dept_id = pd.department_id
+;
