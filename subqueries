@@ -1,0 +1,39 @@
+#sub query in where statement 
+select *
+from employee_demographics
+where employee_id in ( select employee_id
+					   from employee_salary
+                       where dept_id = 1)
+;
+
+#sub query in select statement
+select first_name, last_name, salary, 
+( select avg(salary) 
+from employee_salary 
+) as avg_salary
+from employee_salary
+;
+
+select avg(dept_id)
+from employee_salary
+;
+
+#subquery in from statement 
+select avg(max_age), avg(min_age), avg(avg_age), avg(count_age)
+from (select gender, 
+max(age) as max_age, 
+min(age) as min_age, 
+avg(age) as avg_age, 
+count(age) as count_age
+from employee_demographics
+group by gender) as new_table
+;
+
+select gender, 
+max(age) as max_age, 
+min(age) as min_age, 
+avg(age) as avg_age, 
+count(age) as count_age
+from employee_demographics
+group by gender
+;
