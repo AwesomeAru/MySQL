@@ -1,0 +1,50 @@
+#temp tables 
+#method 1 
+create temporary table temp_table1
+(first_name varchar(50), #put the required table comumn names here
+last_name varchar(50),
+fav_movie varchar(100)
+); #after creating a temp table, make sure you run this first and then go on to write other code
+
+select *
+from temp_table1
+;
+
+insert into temp_table1 
+values ('aru', 'tripathi','thor');
+
+select *
+from temp_table1
+; #if you select it thrice, then you will get the same entry 3 times 
+
+#method 2 
+
+select * 
+from employee_salary
+;
+
+create temporary table temp_table2
+select * 
+from employee_salary
+where salary >= 30000 and dept_id =1
+;
+
+select * 
+from temp_table2
+;
+
+#method 2 example 2 
+
+select * 
+from employee_salary
+;
+
+create temporary table temp_table3
+select * 
+from employee_salary
+where salary >= 30000 and dept_id =1 #once a temp table is made and RUN, you cant do any more changes in it 
+;
+
+select * 
+from temp_table3
+; #temp tables last as long as you are within that session. we can run it in a new sql tab but if we close the workbench and then re run it, it wont work  
