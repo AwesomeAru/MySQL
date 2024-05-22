@@ -1,0 +1,37 @@
+select first_name,
+last_name,
+salary, 
+case 
+	when salary <= 30000 then '3%'
+    when salary > 30000 and salary < 100000 then '5%'
+end as bonus 
+from employee_salary
+;
+
+select first_name,
+last_name,
+salary, 
+dept_id,
+case 
+	when salary <= 30000 then (salary * 1.03) 
+    when salary > 30000 and salary < 100000 then (salary * 1.05)
+end as salary_after_bonus, #impo to put a comma at the end of the line which is just before the case statement  
+case
+	when dept_id = 6 then (salary * 1.1)
+    when dept_id != 6 then '0'
+end as dept_bonus
+from employee_salary
+;
+
+
+select first_name, 
+last_name, 
+age, #impo to put a comma here, unlike the other times when we do nt put a comma 
+case 
+	when age <= 30 then 'young'
+    when age > 30 and age < 40 then 'intermediate'
+    when age between 40 and 50 then 'large' 
+    when age > 60 then 'old'
+end as label
+from employee_demographics
+;
