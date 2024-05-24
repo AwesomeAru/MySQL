@@ -1,0 +1,37 @@
+#stored procedure 
+delimiter $$
+create procedure cherry_1()
+begin 
+	select *
+    from employee_salary
+    where salary > 60000;
+    select * 
+    from employee_demographics
+    where gender = 'female';
+end $$
+delimiter ;
+
+call cherry_1()
+
+#stored procedure 
+delimiter $$
+create procedure cherry_3(helo int)
+begin 
+	select *
+    from employee_salary
+    where employee_id = helo;
+end $$
+delimiter ;
+
+call cherry_3(1)
+
+delimiter $$
+create procedure cherry_5(helo_param int) #as a convention, put '_param' in the end of the name of the parameter passed or do 'p_'
+begin 
+	select * #you cant change the value or anything in a stored procedure once it is created (i.e. run)
+    from employee_salary
+    where employee_id = helo;
+end $$
+delimiter ;
+
+call cherry_5(1);
