@@ -21,7 +21,7 @@ left(first_name, 4) as first4, #the 4 here tells us how many characters do we wa
 right(first_name, 4) as last4, #this shows 4 characters from first name from the right 
 #birth_date, 
 substring(birth_date, 6,2) as birth_month, #selects the 6th and 7th character from birth_date column values 
-substring(birth_date, 1,4) as birth_year #starting from 1 select 4 characters for the birth year 
+substring(birth_date, 1,4) as birth_year #starting from 1 select 4 characters for the birth year #we can also do (birth_date, 1) and this will take all the the values from 1 till the end 
 from employee_demographics
 order by birth_year
 ;
