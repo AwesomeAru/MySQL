@@ -1,8 +1,20 @@
+# (INNER) JOIN: Returns records that have matching values in both tables
+# LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+# RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+# FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
+# JOIN and INNER JOIN will return the same result. INNER is the default join type for JOIN, so when you write JOIN the parser actually writes INNER JOIN.
+
+
 SELECT *
 FROM employee_demographics 
 inner join employee_salary 
 	on employee_demographics.employee_id = employee_salary.employee_id 
 ;
+
+SELECT Orders.OrderID, Customers.CustomerName, Shippers.ShipperName
+FROM ((Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID)
+INNER JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID);
 
 SELECT demo.employee_id, demo.age, occupation #if there are columns which are similar in both the tables then we have to specify the table we are reffering to 
 FROM employee_demographics demo
