@@ -1,0 +1,4 @@
+more msql functions 
+
+char_length()
+return the length of a string (in characters) 
