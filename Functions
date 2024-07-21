@@ -2,3 +2,8 @@ more msql functions [link](https://www.w3schools.com/sql/sql_ref_mysql.asp)
 
 char_length()
 return the length of a string (in characters) 
+
+DATEDIFF(date1, date2)
+returns the difference between 2 dates 
+
+
