@@ -6,4 +6,14 @@ return the length of a string (in characters)
 DATEDIFF(date1, date2)
 returns the difference between 2 dates 
 
+date between date1 and date2
+expression evaluates if date is in between date1 and date2
 
+ifnull(false, true) 
+if it is null then returns the value in true, else returns the value at false
+
+if(expression, iftrue, iffalse)
+if the expression (1st term) is true, then returns the value of the 2nd term else returns the 3rd term
+
+round(value_expression, n)
+to round the value_expression to n decimal places
