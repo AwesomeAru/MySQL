@@ -17,3 +17,21 @@ if the expression (1st term) is true, then returns the value of the 2nd term els
 
 round(value_expression, n)
 to round the value_expression to n decimal places
+
+sum(if(a,b,c)) can be used in place of count+where 
+
+to get percentages - 
+AVG(condition) * 100
+
+substr(string, start char, no of char) 
+can be used to extract dates easily or any other string 
+
+min(date) 
+will give you the first date of an event 
+
+where __ in (usually a table) #not in can also be used acc to situation
+can be used 
+
+DATE_SUB(date, interval 1 day) #the no (here 1) and value (here day) can be changed acc to need
+gives a new date = date (given in expression) - 1 (here, can be anything else)
+
