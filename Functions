@@ -4,10 +4,12 @@ char_length()
 return the length of a string (in characters) 
 
 DATEDIFF(date1, date2)
-returns the difference between 2 dates 
+returns the difference between 2 dates (both the dates are not included in the interval) 
 
 date between date1 and date2
 expression evaluates if date is in between date1 and date2
+eg. activity_date between DATE_SUB("2019-07-28", interval 30 day) and "2019-07-28" (remember to add +1 in date. the q gave the date 07-27 but we
+have add 1 (and make it 28) and then do the Q if it wants the dates to be included)
 
 ifnull(false, true) 
 if it is null then returns the value in true, else returns the value at false
@@ -34,4 +36,7 @@ can be used
 
 DATE_SUB(date, interval 1 day) #the no (here 1) and value (here day) can be changed acc to need
 gives a new date = date (given in expression) - 1 (here, can be anything else)
+
+count(distinct ___ ) 
+to count distinct values 
 
