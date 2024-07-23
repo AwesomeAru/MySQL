@@ -40,3 +40,6 @@ gives a new date = date (given in expression) - 1 (here, can be anything else)
 count(distinct ___ ) 
 to count distinct values 
 
+MOD(value, n)
+gives remainder when value is divided by n. eg MOD(5, 2) will be 1 
+useful for getting even and odd numbers 
