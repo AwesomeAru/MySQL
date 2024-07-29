@@ -43,3 +43,11 @@ to count distinct values
 MOD(value, n)
 gives remainder when value is divided by n. eg MOD(5, 2) will be 1 
 useful for getting even and odd numbers 
+
+case 
+when ----- then ----- else -----
+end as --
+
+lead(column_name, offset [, default value to be shown]) 
+over ()
+it is a window function that returns the value of the specified column name after a certain value (given as offset) 
