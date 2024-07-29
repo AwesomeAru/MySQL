@@ -1,4 +1,5 @@
-#partition by - does not reduce the number of rows (to number of distinct rows like in group by) but keeps them separate
+#partition by (this is a sub clause of over() (over() is a clause)) - does not reduce the number of rows (to number of distinct rows like in group by) but keeps them separate
+can be used to apply aggregate functions, ranking functions and value functions
 
 select dem.first_name, dem.last_name, gender, salary, avg(salary) over (partition by gender) as avg_sal
 from employee_demographics dem
