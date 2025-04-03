@@ -1,0 +1,13 @@
+#Intro to SQL
+
+##Chapter 1 
+##Getting Started With SQL and BigQuery
+
+#BigQuery, a web service that lets you apply SQL to huge datasets.
+from google.cloud import bigquery
+# Create a "Client" object
+client = bigquery.Client()
+# Construct a reference to the "hacker_news" dataset using dataset() method
+dataset_ref = client.dataset("hacker_news", project="bigquery-public-data")
+# API request - fetch the dataset using get_dataset()
+dataset = client.get_dataset(dataset_ref)
